@@ -1,0 +1,9 @@
+{
+  "name": "twitch-ad-muter",
+  "version": "0.2.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test tests/detection-core.test.js tests/audio-controller.test.js"
+  }
+}
