@@ -77,8 +77,8 @@
         reasonCount: result.reasons.length,
         reasons: result.reasons,
         previousCandidateEvidence: event === "candidate-cleared" ? lastCandidateEvidence : undefined,
-        streamReturnConfirmed: false,
-        decision: "diagnostic only; no mute action"
+        liveReturnConfirmed: false,
+        decision: result.actionable ? "tab audio control signal" : "diagnostic only; no audio action"
       });
       lastCandidateState = result.state;
       lastCandidateEvidence = result.reasons;
@@ -133,5 +133,6 @@
     pageObserver.observe(document.body, { subtree: true, childList: true });
   }
   observePlayer(findPlayerRoot());
-  log("Diagnostic observer initialized; automatic audio control is disabled");
+  log("Diagnostic observer initialized; automatic audio control uses observed ad phrases");
 })();
+
